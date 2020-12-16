@@ -1,0 +1,89 @@
+$single_stack_loader_colors:
+  hsla(337, 84, 48, 0.75)
+  hsla(160, 50, 48, 0.75)
+  hsla(190, 61, 65, 0.75)
+  hsla( 41, 82, 52, 0.75);
+$single_stack_loader_size: 2.5em;
+$single_stack_loader_thickness: 0.5em;
+// Calculated variables.
+$lat: ($single_stack_loader_size - $single_stack_loader_thickness) / 2;
+$offset: $lat - $single_stack_loader_thickness;
+#single_stack_loader {
+  position: relative;
+  width: $single_stack_loader_size;
+  height: $single_stack_loader_size;
+  transform: rotate(165deg);
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: $single_stack_loader_thickness;
+    height: $single_stack_loader_thickness;
+    border-radius: $single_stack_loader_thickness / 2;
+    transform: translate(-50%, -50%);
+  }
+  &:before {
+    animation: single_stack_loader_before 2s infinite;
+  }
+  &:after {
+    animation: single_stack_loader_after 2s infinite;
+  }
+}
+@keyframes single_stack_loader_before {
+  0% {
+    width: $single_stack_loader_thickness;
+    box-shadow:
+      $lat (-$offset) nth($single_stack_loader_colors, 1),
+      (-$lat) $offset nth($single_stack_loader_colors, 3);
+  }
+  35% {
+    width: $single_stack_loader_size;
+    box-shadow:
+      0 (-$offset) nth($single_stack_loader_colors, 1),
+      0   $offset  nth($single_stack_loader_colors, 3);
+  }
+  70% {
+    width: $single_stack_loader_thickness;
+    box-shadow:
+      (-$lat) (-$offset) nth($single_stack_loader_colors, 1),
+      $lat $offset nth($single_stack_loader_colors, 3);
+  }
+  100% {
+    box-shadow:
+      $lat (-$offset) nth($single_stack_loader_colors, 1),
+      (-$lat) $offset nth($single_stack_loader_colors, 3);
+  }
+}
+@keyframes single_stack_loader_after {
+  0% {
+    height: $single_stack_loader_thickness;
+    box-shadow:
+      $offset $lat nth($single_stack_loader_colors, 2),
+      (-$offset) (-$lat) nth($single_stack_loader_colors, 4);
+  }
+  35% {
+    height: $single_stack_loader_size;
+    box-shadow:
+        $offset  0 nth($single_stack_loader_colors, 2),
+      (-$offset) 0 nth($single_stack_loader_colors, 4);
+  }
+  70% {
+    height: $single_stack_loader_thickness;
+    box-shadow:
+      $offset (-$lat) nth($single_stack_loader_colors, 2),
+      (-$offset) $lat nth($single_stack_loader_colors, 4);
+  }
+  100% {
+    box-shadow:
+      $offset $lat nth($single_stack_loader_colors, 2),
+      (-$offset) (-$lat) nth($single_stack_loader_colors, 4);
+  }
+}
+#single_stack_loader {
+  position: absolute;
+  top: calc(50% - #{$single_stack_loader_size / 2});
+  left: calc(50% - #{$single_stack_loader_size / 2});
+}

@@ -1,0 +1,88 @@
+$single_stack_loader_grey: rgba(0, 0, 0, .5);
+$single_stack_loader_blue: rgba(0, 0, 255, .5);
+
+.rotating_ring_loader {
+	position: relative;
+	margin: 75px auto;
+	width: 150px;
+	height: 150px;
+	display: block;
+	overflow: hidden;
+	div {
+		height: 100%;
+	}
+}
+
+/* loader 1 */
+.rotating_ring_loader .loader1, .rotating_ring_loader.loader1 div {
+	@include rotating_ring_loader_loaderDivMixin;
+	border-top-color: $single_stack_loader_grey;
+	border-bottom-color: $single_stack_loader_blue;
+}
+
+/*loader 2  */
+.rotating_ring_loader .loader2, .rotating_ring_loader .loader2 div {
+	@include rotating_ring_loader_loaderDivMixin;
+	border-top-color: $single_stack_loader_blue;
+	border-left-color: $single_stack_loader_grey;
+	border-right-color: $single_stack_loader_grey;
+}
+
+/*loader 3  */
+.rotating_ring_loader .loader3, .rotating_ring_loader .loader3 div {
+	@include rotating_ring_loader_loaderDivMixin;
+	border-top-color: $single_stack_loader_grey;
+	border-left-color: $single_stack_loader_blue;
+	animation-timing-function: cubic-bezier(.55, .38, .21, .88);
+	animation-duration: 3s;
+}
+
+/* loader 4 */
+.rotating_ring_loader .loader4, .rotating_ring_loader .loader4 div {
+	@include rotating_ring_loader_loaderDivMixin;
+	border-radius: 50%;
+	padding: 4px;
+	animation: rotate2 4s infinite linear;
+}
+
+.rotating_ring_loader div:hover {
+	animation-play-state: paused;
+}
+
+.rotating_ring_loader, .rotating_ring_loader * {
+	will-change: transform;
+}
+
+@mixin rotating_ring_loader_loaderDivMixin {
+	border-radius: 50%;
+	padding: 8px;
+	border: 2px solid transparent;
+	animation: rotating_ring_loader_rotate linear 3.5s infinite;
+}
+
+@keyframes rotating_ring_loader_rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotate2 {
+	0% {
+		transform: rotate(0deg);
+		border-top-color: $single_stack_loader_grey;
+	}
+	50% {
+		transform: rotate(180deg);
+		border-top-color: $single_stack_loader_blue;
+	}
+	100% {
+		transform: rotate(360deg);
+		border-top-color: $single_stack_loader_grey;
+	}
+}

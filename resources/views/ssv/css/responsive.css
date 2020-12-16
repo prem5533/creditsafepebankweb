@@ -1,0 +1,270 @@
+
+@media only screen and (max-width: 1139px){
+
+	.main-header .main-menu .navbar-collapse > ul > li{
+		margin-left:40px;
+	}
+	
+	.counter-side .countdown .counter-column .count{
+		font-size:32px;
+	}
+	
+}
+
+
+@media only screen and (max-width: 1023px){
+	.main-header .main-menu .navbar-collapse > ul > li{
+		margin-left:18px;
+	}
+	
+	.join-us .counter-side{
+		position:relative;
+		width:100%;
+		float:left;
+		right:0px;
+		height:auto;	
+	}
+	
+	.join-us .counter-side .inner-box{
+		padding:30px;
+		position:relative;
+		height:auto;
+	}
+	
+	
+	.main-header.fixed .header-lower{
+		position:relative !important;
+		top:0px;
+	}
+	
+	
+}
+
+@media only screen and (min-width: 800px) {
+	.main-header .main-menu{
+		display:block !important;	
+	}
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 799px) {
+	.main-header .main-menu{
+		display:none !important;	
+	}	
+	#side-navigation {
+		opacity: 1;
+	}
+	#side-navigation .toggle-nav {
+		opacity: 1;
+		top: 110px;
+	}
+}
+
+
+@media only screen and (max-width: 767px){
+	
+	.header-top{
+		z-index:5;
+	}
+	
+	#side-navigation.scrolled-down .toggle-nav{
+		top:16px;	
+	}
+	
+	.main-header .header-top .top-right{
+		display:none;	
+	}
+	
+	.main-header .header-top .top-left{
+		text-align:center !important;
+		width:100%;
+	}
+	
+	.main-header .header-top .top-left .phone-num,
+	.main-header .header-top .top-left .email{
+		display:inline-block !important;
+		float:none !important;
+		margin:2px 10px !important;	
+	}
+	
+	.header-fixed.fixed .header-lower{
+		position:relative !important;
+	}
+	
+	.main-header .logo{
+		float:none !important;
+		width:100%;
+	}
+	
+	.main-header .right-cont{
+		float:none;
+		width:100%;
+		padding:0px;
+		margin:0px 0px 0px;
+	}
+	
+	.main-header .main-menu{
+		display:none !important;	
+	}
+	
+	
+	
+	.parallax-section h3{
+		font-size:22px;
+	}
+	
+	.parallax-section .theme-btn{
+		margin-bottom:10px;
+	}
+	
+	.main-header .header-top .top-right{
+		padding-top:10px;
+		text-align:left;
+	}
+	
+	.main-slider .window-size .big-title h2{
+		font-size:30px;	
+	}
+	
+	.main-slider .tp-bullets,
+	.main-slider .tp-bullets.hidebullets{
+		display:none;
+	}
+	
+	.tri-column-outer{
+		display:block;	
+	}
+	
+	.tri-column-outer .column{
+		display:block;
+		width:100% !important;
+	}
+	
+	.main-header.fixed .header-lower{
+		position:relative;
+		top:0px;
+	}
+	
+	.sec-title h2{
+		font-size:22px;		
+	}
+	
+	.default-banner .window-size h2,
+	.parallax-section h2{
+		font-size:24px;
+		text-transform:capitalize;	
+	}
+	
+	.two-column-fluid .content-column,
+	.two-column-fluid .image-side{
+		width:100%;
+		float:left;
+		position:relative;
+		min-height:200px;	
+	}
+	
+	.two-column-fluid .column-inner{
+		padding:20px 15px;	
+	}
+	
+	.parallax-section.style-two .text{
+		padding:0px;	
+	}
+	
+	.parallax-section.style-two .text .theme-btn{
+		position:relative;
+		margin:20px 0px;	
+	}
+	
+	.sidebar-page .comments-area .reply-btn{
+		
+		position:relative;
+		top:10px;
+	}
+	
+	.blog-section .blog-post .lower-part{
+		padding-left:0px;
+	}
+	.theme-pagination li a,
+	.blog-section .blog-post .lower-part .post-date{
+		position:relative;
+		top:0px;
+		margin-bottom:7px;
+	}
+}
+
+
+@media only screen and (max-width: 599px){
+	
+	.window-size .auto-container{
+		position:relative !important;
+		min-height:0px !important;
+		height:auto !important;
+	}
+	
+	.default-banner .window-size{
+		padding:30px 15px !important;	
+	}
+	
+	.counter-side .proj-donation{
+		width:100%;
+		margin-bottom:20px;	
+	}
+	
+	.help-us .text-column{
+		padding-left:0px;
+		text-align:center;	
+	}
+	
+	.help-us .text-column .icon{
+		position:relative;
+		margin-bottom:15px;
+		display:inline-block;	
+	}
+}
+
+
+@media only screen and (max-width: 479px){
+
+	
+	#side-navigation .toggle-nav{
+		top:120px;	
+	}
+	
+	#side-navigation.scrolled-down .toggle-nav{
+		top:16px;	
+	}
+	
+	.counter-side .countdown .counter-column{
+		margin:0px 0px !important;	
+	}
+	
+	.counter-side .countdown .counter-column .count{
+		font-size:24px;
+	}
+	
+	.counter-side .countdown .counter-column .colon{
+		font-size:24px;
+		left:12px;
+	}
+	
+	.main-header .logo img{
+		max-width:200px;
+		margin:5px 0px;	
+	}
+	
+	#side-navigation .toggle-nav{
+		left:-44px;	
+	}
+	
+	.featured-project .proj-donation{
+		padding-right:0px;	
+	}
+	
+	.featured-project .proj-donation .theme-btn{
+		position:relative;
+		margin-top:10px;	
+	}
+}
+

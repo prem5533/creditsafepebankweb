@@ -1,0 +1,35 @@
+/**
+ * Custom Styles
+ *
+ *
+ * @package Banking
+ * @author SWS
+ * @version 1.0.0
+ */
+
+.dropdown:hover .dropdown-menu{
+  display: block;
+}
+.form-control:disabled {
+	background: transparent;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+#footer {
+
+}
+#footer .footer-top {
+
+}
+#footer .footer-top .footer-contact {
+
+}
+#footer .footer-top .footer-contact p i {
+	margin-right: 10px!important;
+	padding: 4px;
+}

@@ -1,0 +1,53 @@
+/***************/
+/*	General    */
+/**************/
+.d-none {
+  display: none!important;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+/***************/
+/*	Header    */
+/**************/
+
+header {
+	margin-bottom: 10px;
+}
+
+/***************/
+/*	Footer    */
+/**************/
+
+footer {
+	margin-top: 10px;
+}
+footer .footer-logo {
+	width: 100px;
+}
+footer .footer-link ul li a {
+	color: #b000b3b5;
+}
+footer .footer-link ul li a:active,a:hover {
+	color: #b30063b5;
+	border-bottom: 0;
+} 
+footer .socialicon ul {
+	padding: 5px;
+}
+footer .socialicon ul li{
+	padding: 5px;
+}
+footer .socialicon ul li a {
+	/*color:#000;*/
+	/*background: #fff;*/
+}
+footer .socialicon ul li a img {
+	width: 70px;
+}
+footer .socialicon ul li  a:active, a:hover{
+	/*color:#fff;*/
+	/*background: #000;*/
+}

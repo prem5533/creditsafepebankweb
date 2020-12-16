@@ -1,0 +1,150 @@
+@import "compass/css3";
+  
+$cube_loader_blockSize: 2em;
+//$cube_loader_blockSize: 6vmin; // Try this in Firefox! Viewport based size, which doesn't work in Canary at the moment
+
+// Play with these to see what you get
+$delay: .065s;
+$duration: .88s;
+$cube_loader_startingColor: #fdfdfd;
+$cube_loader_endingColor: #dadada;
+
+// Calculate some values
+$cube_loader_blockMargin: $cube_loader_blockSize / 3;
+$cube_loader_loaderSize: $cube_loader_blockSize * 3 + $cube_loader_blockMargin * 2;
+
+@mixin animation-delay( $delay ) {
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+// Official syntax supported by IE10, FF16, Opera 12.1,
+// so we're only going to add the webkit prefix
+@mixin animation( $ani1:null, $ani2:null ) {
+  @if ($ani2 != null) {
+    -webkit-animation: $ani1, $ani2;
+    animation: $ani1, $ani2;
+  }
+  
+  @else if ($ani1 != null) {
+    -webkit-animation: $ani1;
+    animation: $ani1;
+  }
+}
+
+body {
+  text-align: center;
+}
+
+.cube_loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $cube_loader_loaderSize;
+  height: $cube_loader_loaderSize;
+  margin-left: -$cube_loader_loaderSize/2;
+  margin-top: -$cube_loader_loaderSize/2;
+}
+
+.cube_loader .loader-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  opacity: 0;
+  width: $cube_loader_blockSize;
+  height: $cube_loader_blockSize;
+  background: $cube_loader_startingColor;
+  @include animation(cube_loader_show $duration step-end infinite alternate,
+    cube_loader_pulse $duration linear infinite alternate);
+}
+
+
+
+// Second
+.cube_loader .loader-block:nth-child(1) {
+  @include translate(0, 0);
+  @include animation-delay(1 * $delay);
+}
+
+// Ninth
+.cube_loader .loader-block:nth-child(2) {
+  @include translate($cube_loader_blockSize + $cube_loader_blockMargin, 0);
+  @include animation-delay(2 * $delay);
+}
+
+// Fourth
+.cube_loader .loader-block:nth-child(3) {
+  @include translate(($cube_loader_blockSize * 2) + ($cube_loader_blockMargin * 2), 0);
+  @include animation-delay(3 * $delay);
+}
+
+// Sixth
+.cube_loader .loader-block:nth-child(4) {
+  @include translate(0, $cube_loader_blockSize + $cube_loader_blockMargin);
+  @include animation-delay(5 * $delay);
+}
+
+// Third
+.cube_loader .loader-block:nth-child(5) {
+  @include translate($cube_loader_blockSize + $cube_loader_blockMargin, $cube_loader_blockSize + $cube_loader_blockMargin);
+  @include animation-delay(2 * $delay);
+}
+
+// Eighth
+.cube_loader .loader-block:nth-child(6) {
+  @include translate(($cube_loader_blockSize * 2) + ($cube_loader_blockMargin * 2), $cube_loader_blockSize + $cube_loader_blockMargin);
+  @include animation-delay(7 * $delay);
+}
+
+// Seventh
+.cube_loader .loader-block:nth-child(7) {
+  @include translate(0, ($cube_loader_blockSize * 2) + ($cube_loader_blockMargin * 2));
+  @include animation-delay(6 * $delay);
+}
+
+// Fifth
+.cube_loader .loader-block:nth-child(8) {
+  @include translate($cube_loader_blockSize + $cube_loader_blockMargin, ($cube_loader_blockSize * 2) + ($cube_loader_blockMargin * 2));
+  @include animation-delay(4 * $delay);
+}
+
+// First
+.cube_loader .loader-block:nth-child(9) {
+  @include translate(($cube_loader_blockSize * 2) + ($cube_loader_blockMargin * 2), ($cube_loader_blockSize * 2) + ($cube_loader_blockMargin * 2));
+}
+
+
+@-webkit-keyframes cube_loader_pulse {
+  from,
+  40% { 
+    background: $cube_loader_startingColor;
+  }
+  to {
+    background: $cube_loader_endingColor;
+  }
+}
+
+@-webkit-keyframes cube_loader_show {
+  from, 40% { opacity: 0; }
+  41%, to { opacity: 1; }
+}
+
+@keyframes cube_loader_pulse {
+  from,
+  40% { 
+    background: $cube_loader_startingColor;
+  }
+  to {
+    background: $cube_loader_endingColor;
+  }
+}
+
+@keyframes cube_loader_show {
+  from, 40% { opacity: 0; }
+  41%, to { opacity: 1; }
+}
+
+.loader_div {
+  @include background(#999 radial-gradient(circle farthest-side, #333, #111));
+}
