@@ -21,13 +21,13 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Our Social Networks</h4>
                         <p>Please find us at</p>
-                        <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                        </div>
+                        <ul class="social-links mt-3">
+                            <li><a href="#" class="twitter"><i class="fab fa-twitter icon"></i></a></li>
+                            <li><a href="#" class="facebook"><i class="fab fa-facebook icon"></i></a></li>
+                            <li><a href="#" class="instagram"><i class="fab fa-instagram icon"></i></a></li>
+                            <li><a href="#" class="google-plus"><i class="fab fa-skype icon"></i></a></li>
+                            <li><a href="#" class="linkedin"><i class="fab fa-linkedin icon"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

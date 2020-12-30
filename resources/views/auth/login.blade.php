@@ -17,7 +17,7 @@
         <div class="col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="text-center">{{ __('Register') }}</h2>
+                    <h2 class="text-center">{{ __('Login') }}</h2>
                 </div>
                 <br>
                 <div class="card-body">

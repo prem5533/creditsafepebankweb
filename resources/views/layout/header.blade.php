@@ -10,6 +10,7 @@
             <ul class="navbar-nav ml-auto topNav">
                 @if(isLogged())
                     <li class="nav-item"><a href="{{route('ssvProfile')}}" class="nav-link" data-toggle="modal">Welcome {{$user['first_name']}} {{$user['last_name']}}</a></li>
+                    <li class="nav-item"><a href="{{route('ssvMyWallet')}}" class="nav-link" data-toggle="modal"><i class="fas fa-wallet"></i> <i class="fas fa-rupee-sign"></i> {{number_format($user['wallet_amount'],2)}}</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="logoutMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Logout</a>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="logoutMenu">
@@ -45,6 +46,7 @@
   left: 0; /* On mouse-over, make the elements appear as they should */
 }
 </style>
+@if(count($ssvMenuList))
 <div id="mySidenav" class="sidenav">
     @php
       if(count($ssvMenuList['drawerList'])){
@@ -59,4 +61,5 @@
         }
       }
     @endphp
-</div>    
+</div>
+@endif

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('login'));
 });
 
 Route::group(['namespace'=>'App\Http\Controllers\User'],function(){
@@ -61,6 +61,11 @@ Route::group(['namespace'=>'App\Http\Controllers\User'],function(){
 		// Policy
 		Route::get('/ssvOwnPolicy','PolicyController@ssvOwnPolicy')->name('ssvOwnPolicy');
 		Route::get('/ssvNewApplication','PolicyController@ssvNewApplication')->name('ssvNewApplication');
+		Route::get('/ssviewPolicy','PolicyController@ssviewPolicy')->name('ssviewPolicy');
+		Route::post('/searchSSVPolicy','PolicyController@searchSSVPolicy')->name('searchSSVPolicy');
+
+		// Wallet
+		Route::get('/ssvMyWallet','PolicyController@ssvMyWallet')->name('ssvMyWallet');
 
 
 	});

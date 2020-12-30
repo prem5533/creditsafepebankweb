@@ -58,7 +58,43 @@ class PolicyController extends Controller
         }
         return back()->with(['status'=>false,'message'=>__('message.general_error')]);
     }
-    public function ssvNewApplication(Request $request)
+    public function ssviewPolicy(Request $request)
+    {
+        $response = callAPI('get','ssvPolicySearchList');
+        if($response['status']===true){
+            $policySearch = $response['data']['policySearch'];
+            return view('user.ssviewPolicy',compact('policySearch'));
+        }
+        return back()->with(['status'=>false,'message'=>__('message.general_error')]);
+    }
+    public function searchSSVPolicy(Request $request)
+    {
+        $validation = Validator::make($request->all(),[
+          'numberType' => 'required',
+          'number' => 'required',
+        ],[
+            'numberType' => 'Search type is required',
+            'number' => 'Search text is required',
+        ]);
+        if($validation->fails())
+            return sendErrorResponse(__('message.missing_data'),$validation->errors());
+        $response = callAPI('post','searchSSVPolicy',null,$request->all());
+        if($response['status']===true){
+            $finalList = [];
+            foreach ($response['data']['policyList'] as $key => $value) {
+                $finalList[] = [
+                                    'policyno' => $value['safepetransactionId'], 
+                                    'memberId' => $value['ssv_user']['memberId'],
+                                    'mobile' => $value['ssv_user']['user']['mobile'],
+                                    'memberName' => ucfirst($value['ssv_user']['user']['first_name']) . ' ' . ucfirst($value['ssv_user']['user']['last_name']),
+                                    'pdf' => imageList($value['pdfFile']),
+                                ];
+            }
+            return sendResponse($response['message'],$finalList);
+        }
+        return sendErrorResponse($response['message']);
+    }
+    public function ssvCollectPremium(Request $request)
     {
         
     }

@@ -55,6 +55,15 @@ $(function () {
         }
      });
    });
+    $(window).on('scroll', function() {
+        var height = $('#pagecontent').height() -90;
+        if ($(window).scrollTop() >= height) {
+            $('#footer').css('position','fixed');
+        } else {
+            $('#footer').css('position','relative');
+        }
+    })
+
 	$(document).on('click','.languagechange',function(e){
   		e.preventDefault();
   		$.ajax({
